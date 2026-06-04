@@ -1,5 +1,33 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "/api";
 
+export type AuthUser = {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  full_name: string;
+  is_email_verified: boolean;
+};
+
+export type AuthResponse = {
+  access: string;
+  refresh: string;
+  user: AuthUser;
+};
+
+export type SignUpPayload = {
+  email: string;
+  password: string;
+  first_name?: string;
+  last_name?: string;
+};
+
+export type SignUpResponse = {
+  detail: string;
+  email: string;
+  otp_expires_in_seconds: number;
+};
+
 export type TelemetryLog = {
   id: number;
   device: number;
@@ -14,11 +42,13 @@ export type TelemetryLog = {
 
 export class ApiError extends Error {
   status: number;
+  payload: unknown;
 
-  constructor(message: string, status: number) {
+  constructor(message: string, status: number, payload?: unknown) {
     super(message);
     this.name = "ApiError";
     this.status = status;
+    this.payload = payload;
   }
 }
 
@@ -31,11 +61,13 @@ async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
     ...init,
   });
 
+  const payload = await response.json().catch(() => null);
+
   if (!response.ok) {
-    throw new ApiError(`API request failed with status ${response.status}`, response.status);
+    throw new ApiError(`API request failed with status ${response.status}`, response.status, payload);
   }
 
-  return response.json() as Promise<T>;
+  return payload as T;
 }
 
 export async function fetchLatestTelemetryLog(deviceIdentifier?: string): Promise<TelemetryLog> {
@@ -47,4 +79,39 @@ export async function fetchLatestTelemetryLog(deviceIdentifier?: string): Promis
 
   const queryString = searchParams.toString();
   return apiRequest<TelemetryLog>(`/telemetry/latest/${queryString ? `?${queryString}` : ""}`);
+}
+
+export async function signUp(payload: SignUpPayload): Promise<SignUpResponse> {
+  return apiRequest<SignUpResponse>("/auth/signup/", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function verifyOtp(email: string, code: string): Promise<AuthResponse> {
+  return apiRequest<AuthResponse>("/auth/verify-otp/", {
+    method: "POST",
+    body: JSON.stringify({ email, code }),
+  });
+}
+
+export async function resendOtp(email: string): Promise<SignUpResponse> {
+  return apiRequest<SignUpResponse>("/auth/resend-otp/", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}
+
+export async function loginWithPassword(email: string, password: string): Promise<AuthResponse> {
+  return apiRequest<AuthResponse>("/auth/login/", {
+    method: "POST",
+    body: JSON.stringify({ email, password }),
+  });
+}
+
+export async function loginWithGoogle(credential: string): Promise<AuthResponse> {
+  return apiRequest<AuthResponse>("/auth/google/", {
+    method: "POST",
+    body: JSON.stringify({ credential }),
+  });
 }

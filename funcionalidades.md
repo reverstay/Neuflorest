@@ -68,8 +68,10 @@
 
 | Funcionalidade | Status | Responsável | Observações |
 |---|---|---|---|
-| Modelo e API de usuários | `planejado` | sênior / junior | Cadastro, perfil, endereços |
-| Autenticação JWT (RS256) com Simple JWT ou similar | `planejado` | sênior | Emissão do token; chave privada nunca sai do container Django |
+| Modelo e API de usuários | `em progresso` | sênior / junior | Cadastro padrão com e-mail, senha e verificação OTP |
+| Autenticação JWT (RS256) com Simple JWT ou similar | `em progresso` | sênior | Emissão do token; chave privada nunca sai do container Django |
+| Verificação de e-mail por OTP | `em progresso` | sênior | OTP de 6 dígitos com hash, expiração, limite de tentativas e reenvio com cooldown |
+| Login com Google OAuth SSO | `em progresso` | sênior | Frontend obtém ID token; Django valida com Google e emite JWT RS256 padrão |
 | Catálogo de vasos 3D personalizados | `planejado` | junior | CRUD básico; sem lógica de preço na fase 1 |
 | Catálogo de plantas | `planejado` | junior | Modelo com cuidados recomendados e espécie |
 | Gestão de pedidos (e-commerce) | `planejado` | sênior | Fluxo de status: rascunho → confirmado → em produção → enviado → entregue |
@@ -88,7 +90,7 @@
 | Setup do projeto (Vite + TypeScript + Context API) | `em progresso` | sênior | Contextos de tema, idioma e autenticação extraídos; React Query segue planejado para cache remoto |
 | Design system organic-luxury aplicado no frontend | `em progresso` | sênior | Tokens CSS claro/escuro, Playfair Display, DM Sans, moss green, warm sand e acentos premium |
 | Páginas Landing, Shop, Login e Dashboard modularizadas | `em progresso` | sênior | Referência monolítica App.jsx convertida para TSX com componentes reutilizáveis |
-| Autenticação — login e persistência de token | `planejado` | sênior | Token armazenado em memória + refresh token em httpOnly cookie |
+| Autenticação — login, cadastro, OTP e Google SSO | `em progresso` | sênior | Token armazenado em memória; refresh token retornado pela API para próxima etapa de cookie httpOnly |
 | Storefront — listagem do catálogo | `planejado` | junior | Filtros client-side por tipo de planta e tamanho de vaso |
 | Storefront — página de produto | `planejado` | junior | Visualização do vaso 3D (placeholder na fase 1) e detalhes da planta |
 | Storefront — carrinho e checkout | `planejado` | sênior | Integração com gateway de pagamento é zona bloqueada para juniores |
@@ -119,7 +121,7 @@
 
 | Funcionalidade | Status | Responsável | Observações |
 |---|---|---|---|
-| Par de chaves RS256 gerado uma vez | `planejado` | sênior | Chave privada: somente Django. Chave pública: Django + Quarkus |
+| Par de chaves RS256 gerado uma vez | `em progresso` | sênior | Script local gera `secrets/jwt/private.pem` e `public.pem`; chave privada: somente Django |
 | TLS no broker MQTT | `planejado` | sênior | Certificado por dispositivo ou CA interna de frota |
 | Credenciais por ESP32 (sem segredo global de frota) | `planejado` | sênior | Provisionadas no onboarding do dispositivo |
 | Rejeição de dispositivos desativados no Quarkus | `planejado` | sênior | Cache local com TTL curto do device registry do Django; sem HTTP síncrono no hot path |
@@ -154,4 +156,4 @@
 
 ---
 
-*Última atualização: 2026-06-04 — UI organic-luxury modularizada em TypeScript.*
+*Última atualização: 2026-06-04 — UI organic-luxury e autenticação com OTP/Google em progresso.*

@@ -47,16 +47,31 @@ export type TranslationDictionary = {
     price: string;
   };
   login: {
+    signInTab: string;
+    signUpTab: string;
     title: string;
+    signUpTitle: string;
+    otpTitle: string;
     sub: string;
+    signUpSub: string;
+    otpSub: string;
+    firstName: string;
+    lastName: string;
     email: string;
     password: string;
+    otpCode: string;
     forgot: string;
     submit: string;
+    createAccount: string;
+    verifyOtp: string;
+    resendOtp: string;
     noAccount: string;
+    haveAccount: string;
     register: string;
     orContinue: string;
     quote: string;
+    googleUnavailable: string;
+    authError: string;
   };
   dashboard: {
     title: string;
@@ -131,16 +146,31 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       price: "R$",
     },
     login: {
+      signInTab: "Entrar",
+      signUpTab: "Criar conta",
       title: "Bem-vindo de volta",
+      signUpTitle: "Crie sua conta",
+      otpTitle: "Verifique seu e-mail",
       sub: "Entre na sua conta neuflower",
+      signUpSub: "Cadastre-se para acompanhar seus vasos inteligentes.",
+      otpSub: "Digite o código de 6 dígitos enviado para seu e-mail.",
+      firstName: "Nome",
+      lastName: "Sobrenome",
       email: "E-mail",
       password: "Senha",
+      otpCode: "Código OTP",
       forgot: "Esqueceu a senha?",
       submit: "Entrar",
+      createAccount: "Criar conta",
+      verifyOtp: "Verificar código",
+      resendOtp: "Reenviar código",
       noAccount: "Não tem conta?",
+      haveAccount: "Já tem conta?",
       register: "Criar conta",
       orContinue: "ou continue com",
       quote: "A planta não precisa de você - ela precisa do sistema certo.",
+      googleUnavailable: "Configure VITE_GOOGLE_CLIENT_ID para ativar o Google.",
+      authError: "Não foi possível concluir a autenticação.",
     },
     dashboard: {
       title: "Meu jardim",
@@ -213,16 +243,31 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       price: "$",
     },
     login: {
+      signInTab: "Sign in",
+      signUpTab: "Create account",
       title: "Welcome back",
+      signUpTitle: "Create your account",
+      otpTitle: "Verify your email",
       sub: "Sign in to your neuflower account",
+      signUpSub: "Join to manage your smart planters.",
+      otpSub: "Enter the 6-digit code sent to your email.",
+      firstName: "First name",
+      lastName: "Last name",
       email: "Email",
       password: "Password",
+      otpCode: "OTP code",
       forgot: "Forgot password?",
       submit: "Sign in",
+      createAccount: "Create account",
+      verifyOtp: "Verify code",
+      resendOtp: "Resend code",
       noAccount: "Don't have an account?",
+      haveAccount: "Already have an account?",
       register: "Create account",
       orContinue: "or continue with",
       quote: "The plant does not need you - it needs the right system.",
+      googleUnavailable: "Set VITE_GOOGLE_CLIENT_ID to enable Google.",
+      authError: "Authentication could not be completed.",
     },
     dashboard: {
       title: "My garden",
@@ -295,16 +340,31 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       price: "$",
     },
     login: {
+      signInTab: "Entrar",
+      signUpTab: "Crear cuenta",
       title: "Bienvenido de nuevo",
+      signUpTitle: "Crea tu cuenta",
+      otpTitle: "Verifica tu correo",
       sub: "Entra en tu cuenta neuflower",
+      signUpSub: "Regístrate para gestionar tus macetas inteligentes.",
+      otpSub: "Ingresa el código de 6 dígitos enviado a tu correo.",
+      firstName: "Nombre",
+      lastName: "Apellido",
       email: "Correo",
       password: "Contraseña",
+      otpCode: "Código OTP",
       forgot: "¿Olvidaste tu contraseña?",
       submit: "Entrar",
+      createAccount: "Crear cuenta",
+      verifyOtp: "Verificar código",
+      resendOtp: "Reenviar código",
       noAccount: "¿No tienes cuenta?",
+      haveAccount: "¿Ya tienes cuenta?",
       register: "Crear cuenta",
       orContinue: "o continúa con",
       quote: "La planta no te necesita a ti - necesita el sistema correcto.",
+      googleUnavailable: "Configura VITE_GOOGLE_CLIENT_ID para activar Google.",
+      authError: "No se pudo completar la autenticación.",
     },
     dashboard: {
       title: "Mi jardín",

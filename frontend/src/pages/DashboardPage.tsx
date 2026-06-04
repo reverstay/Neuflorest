@@ -109,7 +109,7 @@ export function DashboardPage() {
           <h1 className="page-title">{t.title}</h1>
           <p className="page-subtitle">
             {t.sub}
-            {user ? ` - ${user.name}` : ""}
+            {user ? ` - ${user.full_name}` : ""}
           </p>
           <p
             className={`dashboard-telemetry-note ${

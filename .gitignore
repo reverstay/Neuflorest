@@ -220,6 +220,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Local secrets and generated certificates
+secrets/
+*.pem
+*.key
+*.crt
+*.csr
+*.srl
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
