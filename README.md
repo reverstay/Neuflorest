@@ -76,6 +76,37 @@ For AWS SES, use the SES SMTP endpoint for your region, such as `email-smtp.sa-e
 docker compose up -d --build --force-recreate -V
 ```
 
+## Google OAuth Configuration
+
+The Google sign-in flow uses a Google OAuth Web Client ID in both services:
+
+- React renders the Google button with `VITE_GOOGLE_CLIENT_ID`.
+- Django validates the Google ID token with `GOOGLE_OAUTH_CLIENT_ID`.
+- The Google `client_secret` is not used by the current frontend ID-token flow and must not be committed.
+
+Use the same Web Client ID in `.env`:
+
+```env
+GOOGLE_OAUTH_CLIENT_ID=replace-with-google-web-client-id
+VITE_GOOGLE_CLIENT_ID=replace-with-google-web-client-id
+```
+
+In Google Cloud Console, add these Authorized JavaScript origins for local development:
+
+```text
+http://localhost:3030
+http://127.0.0.1:3030
+```
+
+Add the production origins separately, such as:
+
+```text
+https://neuflower.com
+https://www.neuflower.com
+```
+
+If a Google client secret was pasted into a chat, issue tracker, terminal history, or committed file, rotate that OAuth credential in Google Cloud Console before using it outside local development.
+
 ## Optional Nginx Routing
 
 A development proxy config is available at `nginx/nginx.conf`. The default Compose stack uses Vite's `/api` proxy, keeping the required runtime to the three core services: PostgreSQL, Django, and React.
