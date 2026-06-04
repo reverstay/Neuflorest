@@ -878,9 +878,11 @@ a {
 .auth-message,
 .auth-error,
 .auth-provider-disabled {
+  position: relative;
   margin-top: 16px;
-  padding: 10px 12px;
+  padding: 12px 14px 12px 42px;
   border-radius: var(--radiusSm);
+  box-shadow: var(--shadow);
   font-size: 13px;
   line-height: 1.45;
 }
@@ -891,11 +893,39 @@ a {
   color: var(--success);
 }
 
+.auth-message::before,
+.auth-error::before,
+.auth-provider-disabled::before {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  transform: translateY(-50%);
+}
+
+.auth-message::before {
+  content: "OK";
+  background: var(--success);
+}
+
 .auth-error,
 .auth-provider-disabled {
   border: 1px solid rgba(139, 32, 32, 0.24);
   background: rgba(139, 32, 32, 0.1);
   color: var(--danger);
+}
+
+.auth-error::before,
+.auth-provider-disabled::before {
+  content: "!";
+  background: var(--danger);
 }
 
 .google-login-wrap {

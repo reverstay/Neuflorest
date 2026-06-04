@@ -15,6 +15,10 @@ export type AuthResponse = {
   user: AuthUser;
 };
 
+export type RefreshResponse = {
+  access: string;
+};
+
 export type SignUpPayload = {
   email: string;
   password: string;
@@ -113,5 +117,12 @@ export async function loginWithGoogle(credential: string): Promise<AuthResponse>
   return apiRequest<AuthResponse>("/auth/google/", {
     method: "POST",
     body: JSON.stringify({ credential }),
+  });
+}
+
+export async function refreshAccessToken(refresh: string): Promise<RefreshResponse> {
+  return apiRequest<RefreshResponse>("/auth/refresh/", {
+    method: "POST",
+    body: JSON.stringify({ refresh }),
   });
 }

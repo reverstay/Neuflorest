@@ -90,7 +90,7 @@
 | Setup do projeto (Vite + TypeScript + Context API) | `em progresso` | sênior | Contextos de tema, idioma e autenticação extraídos; React Query segue planejado para cache remoto |
 | Design system organic-luxury aplicado no frontend | `em progresso` | sênior | Tokens CSS claro/escuro, Playfair Display, DM Sans, moss green, warm sand e acentos premium |
 | Páginas Landing, Shop, Login e Dashboard modularizadas | `em progresso` | sênior | Referência monolítica App.jsx convertida para TSX com componentes reutilizáveis |
-| Autenticação — login, cadastro, OTP e Google SSO | `em progresso` | sênior | Token armazenado em memória; refresh token retornado pela API para próxima etapa de cookie httpOnly |
+| Autenticação — login, cadastro, OTP e Google SSO | `em progresso` | sênior | Sessão persistida no frontend com refresh automático; próxima etapa de hardening: mover refresh token para cookie httpOnly |
 | Storefront — listagem do catálogo | `planejado` | junior | Filtros client-side por tipo de planta e tamanho de vaso |
 | Storefront — página de produto | `planejado` | junior | Visualização do vaso 3D (placeholder na fase 1) e detalhes da planta |
 | Storefront — carrinho e checkout | `planejado` | sênior | Integração com gateway de pagamento é zona bloqueada para juniores |
@@ -156,4 +156,4 @@
 
 ---
 
-*Última atualização: 2026-06-04 — UI organic-luxury e autenticação com OTP/Google em progresso.*
+*Última atualização: 2026-06-04 — login persistente, OTP por email e mensagens de autenticação documentados.*
