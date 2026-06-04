@@ -1,7 +1,7 @@
-# NeuFlorest — Registro de Funcionalidades
+# neuflower — Registro de Funcionalidades
 
 > **Instrução para o engenheiro sênior:**
-> Este arquivo é o registro vivo do que existe, o que está em progresso e o que foi decidido mas ainda não implementado no NeuFlorest.
+> Este arquivo é o registro vivo do que existe, o que está em progresso e o que foi decidido mas ainda não implementado no neuflower.
 > Atualize-o a cada PR mergeado que introduz, altera ou remove uma funcionalidade.
 > Não documente detalhes de implementação aqui — isso vai nos arquivos de código e ADRs.
 > Documente **o que o sistema faz**, **quem é responsável** por cada domínio e **qual o estado atual**.

@@ -37,11 +37,11 @@ export function LoginPage({ setPage }: LoginPageProps) {
       <div className="login-left">
         <div className="login-left-bg" />
         <div className="login-brand">
-          Neu<span>Florest</span>
+          neu<span>flower</span>
         </div>
         <div>
           <p className="login-quote">"{t.quote}"</p>
-          <p className="login-quote-sub">NeuFlorest © {new Date().getFullYear()}</p>
+          <p className="login-quote-sub">neuflower © {new Date().getFullYear()}</p>
         </div>
         <div className="login-icons">🌿 🌵 🌸</div>
       </div>

@@ -2,13 +2,13 @@
 
 ## Purpose
 
-This guide explains the current NeuFlorest frontend reference architecture and how junior developers should extend it safely. The single-file `App.jsx` reference is a teaching artifact: it keeps theming, i18n, contexts, mock data, views, and global styles in one place so the team can understand the system before splitting it into production folders.
+This guide explains the current neuflower frontend reference architecture and how junior developers should extend it safely. The single-file `App.jsx` reference is a teaching artifact: it keeps theming, i18n, contexts, mock data, views, and global styles in one place so the team can understand the system before splitting it into production folders.
 
 The production goal is simple: keep the same patterns, but separate responsibilities into small, reusable, testable modules.
 
 ## Design Direction
 
-NeuFlorest uses an **organic-luxury** visual language:
+neuflower uses an **organic-luxury** visual language:
 
 - Deep moss green for trust, nature, and primary actions.
 - Warm sand and soft surfaces for calm, premium spacing.

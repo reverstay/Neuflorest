@@ -34,7 +34,7 @@ export function Navbar({ page, setPage }: NavbarProps) {
     <nav className="nav">
       <div className="container nav-inner">
         <button className="nav-logo" onClick={() => setPage("landing")} type="button">
-          Neu<span>Florest</span>
+          neu<span>flower</span>
         </button>
         <button
           className={`nav-link ${page === "landing" ? "active" : ""}`}

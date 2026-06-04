@@ -2,7 +2,7 @@
 
 ## `funcionalidades.md` Governance
 
-`funcionalidades.md` is NeuFlorest's living source of truth for product capabilities, ownership, feature status, and architectural decisions. It exists so reviewers can evaluate code changes together with their impact on the system map.
+`funcionalidades.md` is neuflower's living source of truth for product capabilities, ownership, feature status, and architectural decisions. It exists so reviewers can evaluate code changes together with their impact on the system map.
 
 Keeping this file current is a hard requirement for pull request approval. A PR may be blocked if it changes system behavior, ownership, feature scope, service boundaries, or architectural direction without updating `funcionalidades.md` or explaining why no update is needed.
 

@@ -1,20 +1,20 @@
-name: neuflorest
+name: neuflower
 
 services:
   db:
     image: postgres:15-alpine
-    container_name: neuflorest-db
+    container_name: neuflower-db
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-neuflorest}
-      POSTGRES_USER: ${POSTGRES_USER:-neuflorest}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-neuflorest_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-neuflower}
+      POSTGRES_USER: ${POSTGRES_USER:-neuflower}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-neuflower_dev_password}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-neuflorest} -d ${POSTGRES_DB:-neuflorest}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-neuflower} -d ${POSTGRES_DB:-neuflower}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -22,7 +22,7 @@ services:
   backend:
     build:
       context: ./backend
-    container_name: neuflorest-backend
+    container_name: neuflower-backend
     restart: unless-stopped
     command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:2020"
     volumes:
@@ -35,9 +35,9 @@ services:
       DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,0.0.0.0,backend}
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3030,http://127.0.0.1:3030}
       CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-http://localhost:3030,http://127.0.0.1:3030}
-      POSTGRES_DB: ${POSTGRES_DB:-neuflorest}
-      POSTGRES_USER: ${POSTGRES_USER:-neuflorest}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-neuflorest_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-neuflower}
+      POSTGRES_USER: ${POSTGRES_USER:-neuflower}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-neuflower_dev_password}
       DB_HOST: db
       DB_PORT: 5432
     depends_on:
@@ -47,7 +47,7 @@ services:
   frontend:
     build:
       context: ./frontend
-    container_name: neuflorest-frontend
+    container_name: neuflower-frontend
     restart: unless-stopped
     command: npm run dev -- --host 0.0.0.0
     volumes:

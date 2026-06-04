@@ -66,9 +66,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB", "neuflorest"),
-        "USER": os.getenv("POSTGRES_USER", "neuflorest"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "neuflorest_dev_password"),
+        "NAME": os.getenv("POSTGRES_DB", "neuflower"),
+        "USER": os.getenv("POSTGRES_USER", "neuflower"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "neuflower_dev_password"),
         "HOST": os.getenv("DB_HOST", "localhost"),
         "PORT": os.getenv("DB_PORT", "5432"),
     }

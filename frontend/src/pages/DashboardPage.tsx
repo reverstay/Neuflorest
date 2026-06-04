@@ -41,7 +41,7 @@ function telemetryToPlantStatus(telemetry: TelemetryLog): PlantStatus {
 
   return {
     id: 1000 + telemetry.id,
-    name: "NeuFlorest Live Pot",
+    name: "neuflower Live Pot",
     emoji: "🌿",
     moisture: Number.isFinite(moisture) ? Math.round(moisture) : 0,
     temp: Number.isFinite(temperature) ? Math.round(temperature) : 0,

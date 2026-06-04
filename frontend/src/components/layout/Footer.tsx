@@ -17,7 +17,7 @@ export function Footer({ setPage }: FooterProps) {
         <div className="footer-inner">
           <div>
             <div className="footer-brand">
-              Neu<span>Florest</span>
+              neu<span>flower</span>
             </div>
             <div className="footer-tagline">{t.tagline}</div>
           </div>
@@ -42,13 +42,13 @@ export function Footer({ setPage }: FooterProps) {
               {t.terms}
             </button>
             <button className="footer-link" type="button">
-              hello@neuflorest.com
+              hello@neuflower.com
             </button>
           </div>
         </div>
         <div className="footer-bottom">
           <span className="footer-copy">
-            © {new Date().getFullYear()} NeuFlorest. All rights reserved.
+            © {new Date().getFullYear()} neuflower. All rights reserved.
           </span>
           <span className="footer-mark">✦</span>
         </div>

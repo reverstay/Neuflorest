@@ -9,7 +9,7 @@ from .serializers import DeviceSerializer, PlantSerializer, PlanterSerializer, T
 
 @api_view(["GET"])
 def health_check(_request: Request) -> Response:
-    return Response({"status": "ok", "service": "neuflorest-api"})
+    return Response({"status": "ok", "service": "neuflower-api"})
 
 
 class PlantViewSet(viewsets.ModelViewSet):

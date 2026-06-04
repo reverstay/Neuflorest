@@ -1,4 +1,4 @@
-# Generated for the NeuFlorest foundational schema.
+# Generated for the neuflower foundational schema.
 
 from decimal import Decimal
 
