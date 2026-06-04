@@ -60,6 +60,7 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+staticfiles/
 
 # Flask stuff:
 instance/
@@ -214,6 +215,24 @@ frontend/dist/
 
 # PyPI configuration file
 .pypirc
+
+# Node / frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local secrets and generated certificates
+secrets/
+*.pem
+*.key
+*.crt
+*.csr
+*.srl
 
 # Marimo
 marimo/_static/
